@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahdeng - Table | Changing</title>
-</head>
-<body>
-    <h1>Changing Grade {{ grade }}</h1>
-</body>
-</html>
+{% extends 'appGeneral/components/basepage.html' %}
+
+{% block siteTitle %}FahDeng | Homepage{% endblock %}
+
+{% block siteContents %}
+    <div>
+        <h1>Changing Grade</h1>
+    </div>
+
+{% for subject in table %}
+    <div class="{{ subject.day }} {{ subject.period }}">
+        <hr>
+        <p>{{ subject.codeSubject }}</p>
+        <p>{{ subject.teacherName }}</p>
+        <p>{{ subject.codeRoom }}</p>
+    </div>
+{% endfor %}
+
+{% endblock %}
